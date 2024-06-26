@@ -3,39 +3,66 @@ import AddSection from "./AddSection.jsx";
 import Preview from "./Preview.jsx";
 import { useState } from "react";
 
-export default function Main() {
-  const fields = {
-    generalInformation: ["name", "phone", "email"],
-    education: ["schoolName", "titleOfStudy", "location", "fromDate", "toDate"],
-    experience: [
-      "companyName",
-      "positionTitle",
-      "location",
-      "mainResponsibilities",
-      "fromDate",
-      "toDate",
-    ],
-  };
+const fields = {
+  generalInformation: { name: "text", phone: "tel", email: "email" },
+  education: {
+    schoolName: "text",
+    titleOfStudy: "text",
+    location: "text",
+    fromDate: "date",
+    toDate: "date",
+  },
+  experience: {
+    companyName: "text",
+    positionTitle: "text",
+    location: "text",
+    mainResponsibilities: "text",
+    fromDate: "date",
+    toDate: "date",
+  },
+};
 
-  const [cvEntries, setCvEntries] = useState({});
+Object.defineProperty(fields.generalInformation, "type", {
+  enumerable: false,
+  configurable: false,
+  writable: false,
+  value: "generalInformation",
+});
+
+Object.defineProperty(fields.education, "type", {
+  enumerable: false,
+  configurable: false,
+  writable: false,
+  value: "education",
+});
+
+Object.defineProperty(fields.experience, "type", {
+  enumerable: false,
+  configurable: false,
+  writable: false,
+  value: "experience",
+});
+
+export default function Main() {
+  const [cvEntries, setCvEntries] = useState([]);
 
   return (
     <main>
       <AddSection
-        heading="General Information"
+        heading="generalInformation"
         cvEntries={cvEntries}
         setCvEntries={setCvEntries}
         fields={fields.generalInformation}
       />
-      <Preview cvEntries={cvEntries} setCvEntries={setCvEntries} />
+      <Preview cvEntries={cvEntries} />
       <AddSection
-        heading="Education"
+        heading="education"
         cvEntries={cvEntries}
         setCvEntries={setCvEntries}
         fields={fields.education}
       />
       <AddSection
-        heading="Experience"
+        heading="experience"
         cvEntries={cvEntries}
         setCvEntries={setCvEntries}
         fields={fields.experience}
