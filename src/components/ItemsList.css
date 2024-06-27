@@ -1,0 +1,19 @@
+li > button[aria-label] {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+}
+
+li > button[aria-label]:hover {
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
+li > button[aria-label] > img {
+  width: 20px;
+  height: 20px;
+}
