@@ -2,7 +2,7 @@ import "./Form.css";
 import { fromCamelCase } from "../helpers.js";
 import { v4 as uuidV4 } from "uuid";
 
-export default function Form({ cvEntries, setCvEntries, fields }) {
+export default function Form({ cvEntries, setCvEntries, fields, disabled }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -33,13 +33,16 @@ export default function Form({ cvEntries, setCvEntries, fields }) {
                 name={field[0]}
                 autoComplete="off"
                 required
+                disabled={disabled}
               />
             </label>
           </div>
         );
       })}
       <div>
-        <button type="submit">Save</button>
+        <button type="submit" disabled={disabled}>
+          Save
+        </button>
       </div>
     </form>
   );
