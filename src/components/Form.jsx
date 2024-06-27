@@ -1,6 +1,7 @@
 import "./Form.css";
 import { fromCamelCase } from "../helpers.js";
 import { v4 as uuidV4 } from "uuid";
+import { useState } from "react";
 
 export default function Form({
   cvEntries,
@@ -9,6 +10,10 @@ export default function Form({
   type,
   disabled,
 }) {
+  const [values, setValues] = useState(
+    new Array(Object.entries(fields).length).fill(""),
+  );
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -24,7 +29,7 @@ export default function Form({
     newEntry.key = uuidV4();
 
     setCvEntries([...cvEntries, newEntry]); // Add object
-    form.reset();
+    setValues(new Array(Object.entries(fields).length).fill("")); // Empty previous array
   };
 
   // put handleSubmit on onSubmit form and not onSubmit button
@@ -41,6 +46,12 @@ export default function Form({
                 autoComplete="off"
                 required
                 disabled={disabled}
+                value={values[index]}
+                onChange={(e) => {
+                  const newValues = [...values];
+                  newValues[index] = e.target.value;
+                  setValues(newValues);
+                }}
               />
             </label>
           </div>
