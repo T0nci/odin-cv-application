@@ -23,7 +23,12 @@ export default function AddSection({
         disabled={heading === "generalInformation" && sectionEntries.length > 0}
       />
       {sectionEntries.length > 0 && (
-        <ItemsList sectionEntries={sectionEntries} displayName={heading} />
+        <ItemsList
+          cvEntries={cvEntries}
+          setCvEntries={setCvEntries}
+          sectionEntries={sectionEntries}
+          displayName={heading}
+        />
       )}
     </section>
   );

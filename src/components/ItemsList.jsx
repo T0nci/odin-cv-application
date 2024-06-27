@@ -8,7 +8,22 @@ const fields = {
   experience: "companyName",
 };
 
-export default function ItemsList({ sectionEntries, displayName }) {
+export default function ItemsList({
+  sectionEntries,
+  displayName,
+  cvEntries,
+  setCvEntries,
+}) {
+  const handleDeleteClick = (e) => {
+    const key = e.currentTarget.dataset.key;
+
+    const newCvEntries = cvEntries.filter((entry) => {
+      return !(entry.key === key);
+    });
+
+    setCvEntries([...newCvEntries]);
+  };
+
   return (
     <ul className="splitter">
       {sectionEntries.map((entry) => {
@@ -18,7 +33,11 @@ export default function ItemsList({ sectionEntries, displayName }) {
             <button aria-label="Edit entry">
               <img src={EditIcon} alt="" />
             </button>
-            <button aria-label="Delete entry">
+            <button
+              aria-label="Delete entry"
+              data-key={entry.key}
+              onClick={handleDeleteClick}
+            >
               <img src={DeleteIcon} alt="" />
             </button>
           </li>

@@ -11,6 +11,7 @@ export default function Form({ cvEntries, setCvEntries, fields, disabled }) {
 
     const newEntry = {};
     for (const [key, value] of myFormData) {
+      // myFormData is basically an array
       newEntry[key] = value;
     }
     newEntry.type = fields.type;
