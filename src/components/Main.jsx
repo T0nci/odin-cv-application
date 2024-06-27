@@ -22,27 +22,6 @@ const fields = {
   },
 };
 
-Object.defineProperty(fields.generalInformation, "type", {
-  enumerable: false,
-  configurable: false,
-  writable: false,
-  value: "generalInformation",
-});
-
-Object.defineProperty(fields.education, "type", {
-  enumerable: false,
-  configurable: false,
-  writable: false,
-  value: "education",
-});
-
-Object.defineProperty(fields.experience, "type", {
-  enumerable: false,
-  configurable: false,
-  writable: false,
-  value: "experience",
-});
-
 export default function Main() {
   const [cvEntries, setCvEntries] = useState([]);
 

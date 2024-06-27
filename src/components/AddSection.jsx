@@ -20,6 +20,7 @@ export default function AddSection({
         cvEntries={cvEntries}
         setCvEntries={setCvEntries}
         fields={fields}
+        type={heading}
         disabled={heading === "generalInformation" && sectionEntries.length > 0}
       />
       {sectionEntries.length > 0 && (

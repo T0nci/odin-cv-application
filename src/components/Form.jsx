@@ -2,7 +2,13 @@ import "./Form.css";
 import { fromCamelCase } from "../helpers.js";
 import { v4 as uuidV4 } from "uuid";
 
-export default function Form({ cvEntries, setCvEntries, fields, disabled }) {
+export default function Form({
+  cvEntries,
+  setCvEntries,
+  fields,
+  type,
+  disabled,
+}) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -14,7 +20,7 @@ export default function Form({ cvEntries, setCvEntries, fields, disabled }) {
       // myFormData is basically an array
       newEntry[key] = value;
     }
-    newEntry.type = fields.type;
+    newEntry.type = type;
     newEntry.key = uuidV4();
 
     setCvEntries([...cvEntries, newEntry]); // Add object
