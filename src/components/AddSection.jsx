@@ -10,7 +10,7 @@ export default function AddSection({
   fields,
 }) {
   const sectionEntries = cvEntries.filter((entry) => {
-    return (entry.type = heading);
+    return entry.type === heading;
   });
 
   return (
