@@ -29,6 +29,7 @@ export default function AddSection({
           setCvEntries={setCvEntries}
           sectionEntries={sectionEntries}
           displayName={heading}
+          fields={fields}
         />
       )}
     </section>

@@ -1,18 +1,16 @@
-import "./Form.css";
+import "./EditForm.css";
 import { fromCamelCase } from "../helpers.js";
-import { v4 as uuidV4 } from "uuid";
 import { useState } from "react";
 
-export default function Form({
-  cvEntries,
-  setCvEntries,
-  fields,
-  type,
-  disabled,
-}) {
-  const [values, setValues] = useState(
-    new Array(Object.entries(fields).length).fill(""),
-  );
+export default function EditForm({ cvEntries, setCvEntries, entry, fields }) {
+  const nonFields = ["key", "edit", "type"];
+  const initialValues = Object.keys(entry)
+    .filter((key) => !nonFields.includes(key))
+    .map((key) => {
+      return entry[key];
+    });
+
+  const [values, setValues] = useState(initialValues);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,12 +23,33 @@ export default function Form({
       // myFormData is basically an array
       newEntry[key] = value;
     }
-    newEntry.type = type;
-    newEntry.key = uuidV4();
+    newEntry.type = entry.type;
+    newEntry.key = entry.key;
     newEntry.edit = false;
 
-    setCvEntries([...cvEntries, newEntry]); // Add object
-    setValues(new Array(Object.entries(fields).length).fill("")); // Empty previous array
+    const index = cvEntries.findIndex((element) => {
+      return element === entry;
+    });
+    const newCvEntries = [...cvEntries];
+    newCvEntries[index] = newEntry;
+
+    setCvEntries(newCvEntries); // Add object
+  };
+
+  const handleCancel = () => {
+    const oldEntry = {};
+    for (const key in entry) {
+      oldEntry[key] = entry[key];
+    }
+    oldEntry.edit = false;
+
+    const index = cvEntries.findIndex((element) => {
+      return element === entry;
+    });
+    const oldCvEntries = [...cvEntries];
+    oldCvEntries[index] = oldEntry;
+
+    setCvEntries(oldCvEntries); // Add object
   };
 
   // put handleSubmit on onSubmit form and not onSubmit button
@@ -46,7 +65,6 @@ export default function Form({
                 name={field[0]}
                 autoComplete="off"
                 required
-                disabled={disabled}
                 value={values[index]}
                 onChange={(e) => {
                   const newValues = [...values];
@@ -59,9 +77,10 @@ export default function Form({
         );
       })}
       <div>
-        <button type="submit" disabled={disabled}>
-          Save
+        <button type="button" onClick={handleCancel}>
+          Close
         </button>
+        <button type="submit">Save</button>
       </div>
     </form>
   );
