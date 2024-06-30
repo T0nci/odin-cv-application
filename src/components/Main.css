@@ -1,4 +1,10 @@
-main {
+#root main {
+  max-width: 1300px;
+  margin: 0 auto;
+
+  padding: 1rem;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }

@@ -1,3 +1,68 @@
-section.preview {
-  grid-area: 1 / 2 / 4 / 3;
+main section.preview {
+  padding: 2rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1 / 1.41;
+  min-height: 40vh;
+  width: auto;
+  font-family: "Times New Roman", Times, serif;
+
+  grid-row: 1 / span 3;
+  grid-column: 2 / span 1;
+}
+
+.preview > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.header .name {
+  font-size: 2rem;
+}
+
+.header .info {
+  font-size: 0.8rem;
+}
+
+.list-section .heading {
+  font-size: 1rem;
+  border-bottom: 2px solid;
+  margin-bottom: 0.2rem;
+}
+
+.list-section .list {
+  padding: 0 0.5rem;
+}
+
+.list-section .list > *:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+
+.list-section .row-1,
+.list-section .row-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-section .row-1 {
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.list-section .row-2 {
+  font-size: 0.8rem;
+}
+
+.list-section .main-responsibilities {
+  padding: 0.2rem 1rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
 }
