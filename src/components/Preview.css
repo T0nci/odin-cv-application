@@ -2,12 +2,13 @@ main section.preview {
   padding: 2rem;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   aspect-ratio: 1 / 1.41;
-  min-height: 40vh;
-  width: auto;
+  width: 100%;
+  height: auto;
   font-family: "Times New Roman", Times, serif;
 
   grid-row: 1 / span 3;
   grid-column: 2 / span 1;
+  align-self: center;
 }
 
 .preview > *:not(:last-child) {
