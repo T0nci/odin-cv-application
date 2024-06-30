@@ -26,4 +26,25 @@ function fromCamelCase(name) {
   return newName[0].toUpperCase() + newName.slice(1);
 }
 
-export { toCamelCase, fromCamelCase };
+const months = [
+  "Jan.",
+  "Feb.",
+  "Mar.",
+  "Apr.",
+  "May",
+  "June",
+  "July",
+  "Aug.",
+  "Sep.",
+  "Oct.",
+  "Nov.",
+  "Dec.",
+];
+function getMonthYear(date) {
+  if (!(date instanceof Date))
+    throw new Error("Argument must be a Date object!");
+
+  return `${months[date.getMonth()]} ${date.getFullYear()}`;
+}
+
+export { toCamelCase, fromCamelCase, getMonthYear };
