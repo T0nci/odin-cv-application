@@ -88,6 +88,10 @@ main section.preview {
   .list-section .row-2 {
     font-size: 1.08vw;
   }
+
+  .list-section .main-responsibilities {
+    font-size: 1.35vw;
+  }
 }
 
 @media screen and (max-width: 598px) {
@@ -114,5 +118,9 @@ main section.preview {
 
   .list-section .row-2 {
     font-size: 2vw;
+  }
+
+  .list-section .main-responsibilities {
+    font-size: 2.5vw;
   }
 }
