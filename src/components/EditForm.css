@@ -1,0 +1,63 @@
+.cancel.button {
+  background-color: rgb(220, 53, 69);
+}
+
+.cancel.button:hover {
+  background-color: rgb(202, 47, 62);
+}
+
+.cancel.button:active {
+  background-color: rgb(180, 43, 56);
+}
+
+form.edit {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+form.edit > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+form.edit label {
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+form.edit input {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0.25rem 0.5rem;
+  height: auto;
+}
+
+form.edit input:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+form.edit button {
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: rgb(0, 123, 255);
+  border: none;
+  border-radius: 10px;
+}
+
+form.edit button:hover {
+  cursor: pointer;
+  background-color: rgb(0, 113, 235);
+}
+
+form.edit button:active {
+  background-color: rgb(0, 104, 214);
+}
+
+form.edit > :last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}

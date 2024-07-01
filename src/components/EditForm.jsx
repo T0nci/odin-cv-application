@@ -54,7 +54,7 @@ export default function EditForm({ cvEntries, setCvEntries, entry, fields }) {
 
   // put handleSubmit on onSubmit form and not onSubmit button
   return (
-    <form className="splitter" onSubmit={handleSubmit}>
+    <form className="edit" onSubmit={handleSubmit}>
       {Object.entries(fields).map((field, index) => {
         return (
           <div key={index}>
@@ -77,7 +77,7 @@ export default function EditForm({ cvEntries, setCvEntries, entry, fields }) {
         );
       })}
       <div>
-        <button type="button" onClick={handleCancel}>
+        <button className="button cancel" type="button" onClick={handleCancel}>
           Close
         </button>
         <button type="submit">Save</button>

@@ -49,13 +49,13 @@ export default function ItemsList({
   };
 
   return (
-    <ul className="splitter">
+    <ul className="splitter items-list">
       {sectionEntries.map((entry) => {
         return (
           <li key={entry.key}>
             {entry.edit === false ? (
               <>
-                {entry[sections[displayName]]}
+                <p>{entry[sections[displayName]]}</p>
                 <button
                   aria-label="Edit entry"
                   data-key={entry.key}

@@ -4,8 +4,9 @@ li > button[aria-label] {
   border-radius: 50%;
   padding: 0;
   margin: 0;
-  width: 20px;
-  height: 20px;
+  width: auto;
+  height: auto;
+  padding: 0.2rem;
 }
 
 li > button[aria-label]:hover {
@@ -16,4 +17,20 @@ li > button[aria-label]:hover {
 li > button[aria-label] > img {
   width: 20px;
   height: 20px;
+}
+
+.items-list {
+  padding: 1rem;
+}
+
+.items-list > li {
+  max-width: 20rem;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+.items-list > li > :first-child {
+  margin-right: auto;
 }
