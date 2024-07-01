@@ -15,7 +15,7 @@ export default function AddSection({
 
   return (
     <section className="add">
-      <h1>{fromCamelCase(heading)}</h1>
+      <h1 className="big-heading">{fromCamelCase(heading)}</h1>
       <Form
         cvEntries={cvEntries}
         setCvEntries={setCvEntries}

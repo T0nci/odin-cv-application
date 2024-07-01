@@ -1,3 +1,65 @@
 .splitter {
   border-top: 2px solid black;
 }
+
+.big-heading {
+  font-size: 2rem;
+}
+
+section.add {
+  padding: 1rem;
+}
+
+section.add > form {
+  padding: 1rem;
+}
+
+section.add > form > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+section.add > form label {
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+section.add > form input {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0.25rem 0.5rem;
+  height: auto;
+}
+
+section.add > form input:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+section.add > form input:disabled {
+  background-color: rgb(230, 230, 230);
+}
+
+section.add > form button[type="submit"] {
+  width: auto;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: rgb(0, 123, 255);
+  border: none;
+  border-radius: 10px;
+}
+
+section.add > form button[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(0, 113, 235);
+}
+
+section.add > form button[type="submit"]:active {
+  background-color: rgb(0, 104, 214);
+}
+
+section.add > form button[type="submit"]:disabled {
+  cursor: auto;
+  background-color: rgb(110, 180, 255);
+}
